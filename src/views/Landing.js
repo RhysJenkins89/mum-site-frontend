@@ -14,26 +14,22 @@ const Landing = () => {
         getData()
     }, [])
 
-    if (loading) {
-        return (
-            <h4>Content loading</h4>
-        )
-    }
-
     return (
         <>
-            {/* <h1>Hello from the Landing component!</h1> */}
-            <h4>Content loaded.</h4>
-            {/* {
-                postData.data.map((item) => {
-                    return (
-                        <div>
-                            <h2>{item.attributes.title}</h2>
-                            <h2>{item.attributes.body}</h2>
-                        </div>
-                    )
-                })
-            } */}
+            <h1>Hello from the Landing component!</h1>
+            {
+                loading ? 
+                    <p>Content is loading...</p> 
+                    :     
+                    postData.data.map((item) => {
+                        return (
+                            <div>
+                                <h2>{item.attributes.Title}</h2>
+                                <h2>{item.attributes.Body}</h2>
+                            </div>
+                        )
+                    })       
+            }
         </>
     )
 }
